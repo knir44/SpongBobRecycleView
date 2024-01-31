@@ -39,9 +39,8 @@ public class MyData {
             "Bikini Bottom's workout enthusiast," +
                     " Larry, is a muscle-bound lobster often caught" +
                     " in comical fitness escapades at Goo Lagoon." +
-                    " His impressive physique is only matched by his oblivious nature, " +
-                    "and his signature catchphrase is a flexed muscle " +
-                    "accompanied by the declaration, \"I work out!",
+                    " His impressive physique is only matched by his oblivious nature."
+              ,
 
             "SpongeBob's pet snail, who communicates through expressive meows" +
                     " and is surprisingly sophisticated." +
