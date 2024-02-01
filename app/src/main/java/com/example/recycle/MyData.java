@@ -5,7 +5,7 @@ package com.example.recycle;
 public class MyData {
 
     static String[] nameArray = {"SpongeBob", "Patric", "Squidward", "Mr.Krabs", "Sandy Cheeks", "Plankton",
-          "Larry the Lobster", "Gary the Snail","Mrs.Puff", "Mermaid Man", "Barnacle Boy", "Man Ray", "Dirty Bubble"};
+          "Larry", "Gary","Mrs.Puff", "Mermaid Man", "Barnacle Boy", "Man Ray", "Dirty Bubble"};
     static String[] versionArray = {"The perpetually optimistic and energetic sponge who lives in a pineapple under the sea. " +
              "SpongeBob's enthusiasm for life is only matched by his knack for finding trouble in the most unlikely places\n" +
             " turning ordinary tasks into epic adventures.",
