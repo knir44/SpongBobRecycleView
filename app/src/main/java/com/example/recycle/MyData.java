@@ -62,9 +62,9 @@ public class MyData {
                     " occasionally rebelling against Mermaid Man's eccentric antics."
 
             ,"A supervillain who, despite his menacing appearance," +
-            " Man Ray's evil plans always backfire due to his own" +
-            " incompetence or the chaos of Bikini Bottom. His villainous efforts inadvertently" +
-            " turn into a source of amusement for the residents.",
+                    " Man Ray's evil plans always backfire due to his own" +
+                    " incompetence or the chaos of Bikini Bottom. His villainous efforts inadvertently" +
+                    " turn into a source of amusement for the residents.",
 
             "A living mass of filth and grime, this soapy" +
                     " supervillain's evil plans are constantly thwarted" +
