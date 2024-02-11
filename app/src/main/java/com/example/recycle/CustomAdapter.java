@@ -28,6 +28,31 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             name = itemView.findViewById(R.id.characterName);
             description = itemView.findViewById(R.id.characterDescription);
             imageView = itemView.findViewById(R.id.characterImage);
+
+            itemView.setOnClickListener(v -> {
+                String itemName = name.getText().toString();
+                String snackbarMessage = "You've selected: " + itemName + "! Enjoy exploring further!";
+                Snackbar snackbar = Snackbar.make(v, snackbarMessage, Snackbar.LENGTH_INDEFINITE);
+
+                // Customizing the appearance
+                View snackBarView = snackbar.getView();
+                snackBarView.setBackgroundColor(ContextCompat.getColor(v.getContext(), R.color.snackbarBackgroundColor)); // Change the background color
+
+                // Accessing the Snackbar's text view to customize text color and size
+                TextView textView = snackBarView.findViewById(com.google.android.material.R.id.snackbar_text);
+                textView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.snackbarTextColor)); // Change the text color
+                textView.setTextSize(16); // Set the text size
+
+                // Customizing the action button text color and size
+                Button actionButton = snackBarView.findViewById(com.google.android.material.R.id.snackbar_action);
+                actionButton.setTextColor(ContextCompat.getColor(v.getContext(), R.color.snackbarActionTextColor)); // Change the action button text color
+                actionButton.setTextSize(16); // Set the action button text size
+
+                // Set the action to close the Snackbar
+                snackbar.setAction("Close", view -> snackbar.dismiss());
+                snackbar.show();
+            });
+
         }
     }
 
