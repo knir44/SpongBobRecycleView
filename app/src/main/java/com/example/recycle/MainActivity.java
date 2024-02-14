@@ -17,14 +17,11 @@ public class MainActivity extends AppCompatActivity {
     private Button myButton ;
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
-
     private ArrayList<DataModel> dataSet;
-
     private CustomAdapter adapter;
-
     private MediaPlayer song = null;
-
     private Boolean isPause = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

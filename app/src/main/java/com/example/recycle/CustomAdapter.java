@@ -1,9 +1,11 @@
 package com.example.recycle;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,28 +16,35 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
     ArrayList<DataModel> dataSet;
+
     public CustomAdapter(ArrayList<DataModel> dataSet) {
         this.dataSet = dataSet;
     }
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView name;
         TextView description;
         ImageView imageView;
+        EditText searchEditText;
+        CustomAdapter adapter;
+
         public MyViewHolder(View itemView){
             super(itemView);
 
             name = itemView.findViewById(R.id.characterName);
             description = itemView.findViewById(R.id.characterDescription);
             imageView = itemView.findViewById(R.id.characterImage);
+            this.adapter = adapter;
 
             itemView.setOnClickListener(v -> {
                 String itemName = name.getText().toString();
-                String snackbarMessage = "You've selected: " + itemName + "! Enjoy exploring further!";
+                String snackbarMessage = "You've selected: " + itemName + "! \nEnjoy exploring further!";
                 Snackbar snackbar = Snackbar.make(v, snackbarMessage, Snackbar.LENGTH_INDEFINITE);
 
                 // Customizing the appearance
@@ -55,6 +64,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 // Set the action to close the Snackbar
                 snackbar.setAction("Close", view -> snackbar.dismiss());
                 snackbar.show();
+
+                // Automatically close the Snackbar after 3 seconds
+                Handler handler = new Handler();
+                handler.postDelayed(snackbar::dismiss, 4000); // 3000 milliseconds = 3 seconds
             });
 
         }
@@ -83,5 +96,4 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public int getItemCount() {
         return dataSet.size();
     }
-
 }
